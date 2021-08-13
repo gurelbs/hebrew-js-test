@@ -9,8 +9,8 @@ const answers = new Hebrew()
 express()
 	.use(cors())
 	.use(express.json())
-	.use(express.static(path.join(__dirname, '/client/build')))
-	.get('*', (req, res) => res.sendFile(path.join(__dirname, '/client/build/index.html')))
+	.use(express.static(path.join(__dirname, 'client/build')))
+	.get('/*', (req, res) => res.sendFile(path.join(__dirname, 'client/build','index.html')))
 	.post('/translate', async (req, res) => {
 		try {
 			let { word } = req.body
