@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "NODE_ENV=production cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "deploy": " \"git add . && git commit -m \"update\" && git push origin main && git push heroku main\""
   },
   "keywords": [],
