@@ -1,19 +1,18 @@
 const express = require('express')
 const { Hebrew } = require('hebrew-js')
 const cors  = require('cors')
-const { json } = require('express')
 const app = express()
 const path = require("path");
 
 app.use(cors())
-app.use(json())
+app.use(express.json())
+app.use(express.static(path.join(__dirname, '/client/build')));
 
 let answers = new Hebrew()
 
-  app.use(express.static(path.join(__dirname, '/client/build')));
-  app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname,'/client/build/index.html'));
-  });
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname,'/client/build/index.html'));
+});
 
 app.post('/translate', async (req,res) => {
   try {
