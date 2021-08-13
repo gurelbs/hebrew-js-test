@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "npm --prefix client run build",
+    "build": "npm run build --prefix client",
     "heroku-postbuild": "NODE_ENV=production cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "deploy": " \"git add . && git commit -m \"update\" && git push origin main && git push heroku main\""
   },
