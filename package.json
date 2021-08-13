@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "build": "npm --prefix client run build",
     "heroku-postbuild": "NODE_ENV=production cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
-    "deploy":" \"git add . && git commit -m \"update\" && git push origin main && git push heroku main\""
+    "deploy": " \"git add . && git commit -m \"update\" && git push origin main && git push heroku main\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "hebrew-js": "0.0.9",
     "path": "^0.12.7"
