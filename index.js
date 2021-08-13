@@ -1,20 +1,19 @@
 const express = require('express')
-const { Hebrew } = require('hebrew-js')
+const Hebrew  = require('hebrew-js')
 const cors = require('cors')
-
 const path = require('path')
+
 const PORT = process.env.PORT || 5000
 const answers = new Hebrew()
 
 express()
 	.use(cors())
 	.use(express.json())
-	.use(express.static(path.join('/client/build')))
-	.get('*', (req, res) => res.sendFile(path.join('/build/index.html')))
+	.use(express.static(path.join('/client/build/index.html')))
+	// .get('*', (req, res) => res.sendFile(path.join('/build/index.html')))
 	.post('/translate', async (req, res) => {
 		try {
-			let { word } = req.body
-			let answer = await answers.translate(word)
+			let answer = await answers.news('קורונה')
 			res.status(200).send({ answer }).end()
 		} catch (error) {
 			console.log(error)
