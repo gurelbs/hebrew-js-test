@@ -5,7 +5,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "concurrently --kill-others-on-fail \"nodemon server.js\" \"npm run start --prefix client\""
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
