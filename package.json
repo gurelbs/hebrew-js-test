@@ -1,6 +1,5 @@
 {
   "name": "hebrewjs-test",
-  "homepage": "http://gurelbs.github.io/hebrew-js-test",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
