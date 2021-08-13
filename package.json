@@ -5,10 +5,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "concurrently \"npm i \" \"cd client && npm i && npm run build\"",
-    "start": "nodemon server.js",
-    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
+    "start": "concurrently --kill-others-on-fail \"nodemon server.js\" \"npm run start --prefix client\""
   },
   "keywords": [],
   "author": "",
