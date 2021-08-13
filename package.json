@@ -2,9 +2,10 @@
   "name": "hebrewjs-test",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node index.js",
+    "heroku-postbuild": "NODE_ENV=production cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "deploy":" \"git add . && git commit -m \"update\" && git push origin main && git push heroku main\""
   },
   "keywords": [],
