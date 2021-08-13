@@ -1,11 +1,10 @@
 const express = require('express')
-const Hebrew  = require('hebrew-js')
+const {Hebrew} = require('hebrew-js')
 const cors = require('cors')
 const path = require('path')
 
 const PORT = process.env.PORT || 5000
 const answers = new Hebrew()
-
 express()
 	.use(cors())
 	.use(express.json())
