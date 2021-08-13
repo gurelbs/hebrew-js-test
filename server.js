@@ -14,7 +14,7 @@ let answers = new Hebrew()
   app.get('*', (req, res) => {
       res.sendFile(path.join(__dirname,'/client/build/index.html'));
   });
-  
+
 app.post('/translate', async (req,res) => {
   try {
     let {word} = req.body
@@ -24,8 +24,8 @@ app.post('/translate', async (req,res) => {
     console.log(error);
   }
 })
-
-app.listen(process.env.PORT || 5000,() => console.log(`server run at http://localhost:5000`))
+let PORT = process.env.PORT || 5000
+app.listen(PORT,() => console.log(`server run at http://localhost:${PORT}`))
 
 
 // direction('תל אביב','ירושלים')
